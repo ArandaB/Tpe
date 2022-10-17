@@ -1,0 +1,104 @@
+.navImg{
+    height: 80px;
+    width: 360px;
+}
+
+.navList{
+    color: aliceblue;
+    text-decoration: none;
+    list-style: none;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.h4Nav{
+    color: aliceblue;
+}
+
+.nameNav{
+    color:#ea0d44;
+}
+
+.tituloTable {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.divTable {
+    padding: 30px 20px 30px 20px;
+}
+
+.tableJuegos {
+    text-align: center;
+    background-color: rgb(226, 215, 215);
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: solid 1px black;
+}
+
+thead {
+    background-color: #551c1c;
+    border-bottom: solid 2px #551616;
+    color: white;
+    width: 20px;
+}
+
+
+form{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+form input{
+    margin: 5px;
+}
+
+.homeNav a{
+    color: #ea0d44;   
+}
+.loginNav a{
+    color: white;
+}
+
+
+form btnTable{
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.btnEnD button{
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.btnTable button{
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.card-body{
+    padding: 20px;
+    width: 500px;
+}
+
+.divCard{
+    display: flex;
+    justify-content: center;
+    
+}
+.divCard div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
