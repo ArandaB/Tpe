@@ -16,15 +16,8 @@ class juegosController{
     }
 
     function showHome(){
-        $this->checkLoggedIn();
         $juegos = $this->model->getJuegos();
         $this->view->showJuegosTable($juegos);
-    }
-
-    function showCategories(){
-        $this->checkLoggedIn();
-        $categoriesTable = $this->model->getCategories();
-        $this->view->tableCategories($categoriesTable);
     }
 
     function viewJuego($id){

@@ -1,6 +1,7 @@
 <?php
 require_once 'controllers/juegosController.php';
 require_once 'controllers/userController.php';
+require_once 'controllers/categoriesController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,6 +15,7 @@ $params = explode('/', $action);
     
 $juegosController = new juegosController();
 $userController = new userController();
+$categoriesController = new categoriesController();
 
 
 
@@ -37,7 +39,7 @@ switch ($params[0]) {
         $juegosController->editGame($params[1]);
         break;
     case 'showCategories':
-        $juegosController->showCategories();
+        $categoriesController->showCategories();
         break;
     case 'login':
         $userController->logIn();

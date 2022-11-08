@@ -14,13 +14,7 @@ class JuegosModel{
         $juegos = $query->fetchAll(PDO::FETCH_OBJ);
         return $juegos;
     }
-    function getCategories(){
-        $query = $this->db->prepare('SELECT a.*, b.* FROM juegos a LEFT JOIN categorias b ON a.id_categorie = b.id_categorie');
-        $query->execute();
-        $categoriesT = $query->fetchAll(PDO::FETCH_OBJ);
-        return $categoriesT;
-    }
-
+    
     function getJuego($id){
         $sentencia = $this->db->prepare( 'SELECT * FROM juegos WHERE id=?');
         $sentencia->execute(array($id));

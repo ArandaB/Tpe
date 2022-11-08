@@ -19,7 +19,13 @@
         </thead>
         {foreach from=$juegos item=$juego}
             <tr>
-                <td>{$juego->id} <br> <a class="btnEnD e" href="editView/{$juego->id}"><button>Editar</button></a> <a class="btnEnD d" href="deleteGame/{$juego->id}"><button>Borrar</button></a></td>
+                <td>
+                    {$juego->id} <br>
+                    {if $user == 1}
+                        <a class="btnEnD e" href="editView/{$juego->id}"><button>Editar</button></a>
+                        <a class="btnEnD d" href="deleteGame/{$juego->id}"><button>Borrar</button></a> 
+                    {/if}    
+                </td>
                 <td><a href="juego/{$juego->id}">{$juego->name}</a></td>
                 <td>{$juego->release_date}</td>
                 <td>{$juego->categories}</td>
@@ -31,21 +37,22 @@
 </div>
 
 <div>
-    <h2 class="tituloTable">Agregar un juego a la lista!</h2>
-    <form method="post" action="createGame" enctype="multipart/form-data">
-        <label>Nombre del juego:</label><input type="text" name="name" required>
-        <label>Categoria del juego:</label><select name="categorie">
-            <option value="action">Accion</option>
-            <option value="adventure">Aventura</option>
-            <option value="sport">Deporte</option>
-        </select>
-        <label>Fecha de lanzamiento:</label><input type="date" name="release_date" required>
-        <label>Descripcion:</label><input type="text" name="description" required>
-        <label>Posicion:</label><input type="number" name="id" required>
-        <label>Adjuntar imagen:</label><input type="file" name="img" required>
-        <input type="submit" value="Agregar">
-    </form>
-
+    {if $user == 1}
+        <h2 class="tituloTable">Agregar un juego a la lista!</h2>
+        <form method="post" action="createGame" enctype="multipart/form-data">
+            <label>Nombre del juego:</label><input type="text" name="name" required>
+            <label>Categoria del juego:</label><select name="categorie">
+                <option value="action">Accion</option>
+                <option value="adventure">Aventura</option>
+                <option value="sport">Deporte</option>
+            </select>
+            <label>Fecha de lanzamiento:</label><input type="date" name="release_date" required>
+            <label>Descripcion:</label><input type="text" name="description" required>
+            <label>Posicion:</label><input type="number" name="id" required>
+            <label>Adjuntar imagen:</label><input type="file" name="img" required>
+            <input type="submit" value="Agregar">
+        </form>
+    {/if}
 </div>
 
 

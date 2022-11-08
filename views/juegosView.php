@@ -11,14 +11,11 @@ class JuegosViews{
     }
 
     function showJuegosTable($juegos){
+        $user = $this->checkLoggedInView();
         $this->smarty->assign('juegos', $juegos);
+        $this->smarty->assign('user', $user);
         $this->smarty->assign('titulo', 'Juegos mejor valorados de la historia');
         $this->smarty->display('./templates/tablaJuegos.tpl');
-    }
-
-    function tableCategories($juegos){
-        $this->smarty->assign('juegos', $juegos);
-        $this->smarty->display('./templates/tablaCategorias.tpl');
     }
 
     function showJuego($juego){
@@ -41,5 +38,16 @@ class JuegosViews{
         $this->smarty->assign('id', $id);
         $this->smarty->display('./templates/editJuego.tpl');
         include ("templates/footer.html");
+    }
+
+    function checkLoggedInView(){
+        session_start();
+        if(!isset($_SESSION["user"])){
+            $user = 0;
+        }
+        else{
+            $user = 1;
+        }
+        return $user;
     }
 }
